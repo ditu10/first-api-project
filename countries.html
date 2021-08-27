@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .country{
+            
+            background-color: rgba(248, 237, 222, 0.637);
+            /* border: 2px solid cornflowerblue; */
+            
+            text-align: center;
+            /* margin: 0 auto; */
+        }
+        .flag{
+            margin: 0 auto;
+        }
+        p{
+            margin: 10px 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="text-5xl font-semibold p-5 text-center underline mb-8">All the Countries</h1>
+
+    </header>
+
+    <main>
+        <section class=" px-8 flex md:flex-row flex-col space-y-4 md:space-y-0 justify-between md:items-end pb-8">
+            <div class="text-xl lg:space-x-2">
+                <p class="text-3xl pl-2">Sorted by:</p>
+            
+                <button id="name" class="bg-gray-200 px-2 py-1 rounded-l">Name</button>
+                <button id="population" class="bg-gray-200 px-2 py-1 rounded-l">Population</button>
+                <button id="area" class="bg-gray-200 px-2 py-1 rounded-l">Area</button>
+                <button id="density" class="bg-gray-200 px-2 py-1 rounded-l">Density</button>
+            </div>
+            <div>
+                <input class=" bg-gray-200 p-2 rounded-lg text-xl" type="text" name="" id="search" placeholder="Search any country">
+            </div>
+        </section>
+        <section>
+            <div id="countries" class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
+                
+            </div>
+        </section>
+    </main>
+
+    <script src="js/countries.js"></script>
+</body>
+</html>
