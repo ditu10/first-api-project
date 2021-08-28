@@ -14,7 +14,8 @@ window.onload = function () {
 
 
 const showDetails = (data) => {
-    let food = data.meals[0]
+    let food = data.meals[0];
+    document.getElementById('loading').style.display = "none";
     const food_details = document.getElementById('food-details')
     const divLeft = document.createElement('div')
     const divright = document.createElement('div')
