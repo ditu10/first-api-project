@@ -62,8 +62,9 @@ const displayAllItems = foodId => {
     // fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodId}`)
     //     .then(res => res.json())
     //     .then(data => console.log(data))
-    const link = foodId;
-    const url = 'http://127.0.0.1:5500/foodDetails.html?name=' + encodeURIComponent(link);
+    const code = foodId;
+    const link = window.location.href.slice(0, window.location.href.length - 15);
+    const url = `${link}foodDetails.html?name=` + encodeURIComponent(code);
     // window.location.href = url;
     window.open(url,'_blank');
     // showFoodDetails()  
