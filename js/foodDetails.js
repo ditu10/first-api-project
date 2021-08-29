@@ -13,31 +13,38 @@ window.onload = function () {
 }
 
 
+
+const showRecipie = () => {
+    if (document.getElementById('recipie').style.display == 'block')
+        document.getElementById('recipie').style.display = "none"
+    else 
+        document.getElementById('recipie').style.display = "block"
+}
+
 const showDetails = (data) => {
     let food = data.meals[0];
     console.log(food)
+    
+
     document.getElementById('loading').style.display = "none";
     const food_details = document.getElementById('food-details')
     const divLeft = document.createElement('div')
-    const divright = document.createElement('div')
-    divLeft.classList.add('w-5/6', 'mx-auto')
-    divright.classList.add('w-5/6', 'mx-auto' , 'py-5')
+    
+    divLeft.classList.add('lg:w-5/6', 'mx-auto')
+   
     divLeft.innerHTML = `
     <h3 class="text-4xl pb-4 text-center font-semibold text-yellow-500">${food.strMeal}</h3>
-    <img class="w-full" src="${food.strMealThumb}">
+    <img class="w-full pb-8" src="${food.strMealThumb}"> 
+    <div>
+        <button onclick="showRecipie()" class="px-3 font-semibold text-white hover:bg-gray-800 py-1 bg-yellow-400  text-xl rounded mr-8 mb-5">Show Recipie<button>
+        <a class="px-3 py-1 font-semibold text-white hover:bg-gray-800 bg-yellow-400 text-xl rounded" href="${food.strYoutube}" target="_blank">Watch recipie</a>
+    </div>
+    <p id="recipie" class="hidden text-lg text-gray-500"><span class="text-2xl font-semibold text-yellow-500 block">How to Cook</span> ${food.strInstructions}</p>
+    `
     
-    `
-    // divright.classList.add('col-span-2')
-    // divright.classList.add('overflow-y-auto');
-    divright.innerHTML = `
-        <h3 class="text-xl pt-5">Area: <span class="text-yellow-500 text-xl">${food.strArea}</span> </h3>
-        <h3 class="text-xl pt-5">Category: <span class="text-yellow-500 text-xl">${food.strCategory}</span> </h3>
-        <h3 class="text-2xl text-yellow-500 pt-8">Recipie details:</h3>
-            
-        <p class="text-xl overflow-y-auto h-80 pt-5">${food.strInstructions}</p>
-    `
+    
     food_details.appendChild(divLeft);
-    // food_details.appendChild(divright);
+    
 
     showIngradients(food)
 }
@@ -56,7 +63,7 @@ const showIngradients = (food) => {
     h3.innerText = `Ingredients`;
     h3.classList.add('text-center', 'text-4xl', 'text-black-500','font-semibold','pb-8')
     
-    for (let count = 1; count < 20; count++){
+    for (let count = 1; count <= 20; count++){
         let ingradient = `strIngredient${count}`;
         if (food[ingradient] != '') {
             const package = document.createElement('div')
@@ -68,7 +75,7 @@ const showIngradients = (food) => {
            
             package.innerHTML = `
             <img src="https://www.themealdb.com/images/ingredients/${ingredName}.png">
-            <p class = "text-xl text-center text-yellow-500">${food[ingredQuantity]} ${ingredName}</p>
+            <p class = "text-xl text-center text-yellow-500">${ingredName} = ${food[ingredQuantity]}</p>
             `
             
             innerDiv.appendChild(package)
