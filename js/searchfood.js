@@ -39,10 +39,10 @@ const displayFoods = foods => {
         console.log(food)
         const food_section = document.getElementById('foods-section');
         const div = document.createElement('div');
-        div.classList.add('w-5/6', 'mx-auto' , 'py-5')
+        div.classList.add('p-4','shadow-lg' , 'py-5')
         div.innerHTML = `
         <img onclick="displayAllItems('${food.idMeal}')" src="${food.strMealThumb}">
-        <h3 onclick="displayAllItems('${food.idMeal}')" class="text-xl text-center text-yellow-500 font-semibold">${food.strMeal}</h3>
+        <h3 onclick="displayAllItems('${food.idMeal}')" class="text-xl pt-5 text-center text-yellow-500 font-semibold">${food.strMeal}</h3>
         `
         food_section.appendChild(div)
     });
