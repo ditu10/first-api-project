@@ -39,7 +39,14 @@ const showDetails = (data) => {
         <button onclick="showRecipie()" class="px-3 font-semibold text-white hover:bg-gray-800 py-1 bg-yellow-400  text-xl rounded mr-8 mb-5">Show Recipie<button>
         <a class="px-3 py-1 font-semibold text-white hover:bg-gray-800 bg-yellow-400 text-xl rounded" href="${food.strYoutube}" target="_blank">Watch recipie</a>
     </div>
-    <p id="recipie" class="hidden text-lg text-gray-500"><span class="text-2xl font-semibold text-yellow-500 block">How to Cook</span> ${food.strInstructions}</p>
+
+    <div id="recipie" class="hidden">
+        <p class="text-xl font-semibold"><span class="text-xl font-semibold text-yellow-500 ">Category:</span> ${food.strCategory}</p>
+        <p class="text-xl font-semibold"><span class="text-xl font-semibold text-yellow-500 ">Type:</span> ${food.strArea}</p>
+        <p class="pt-5 text-lg text-gray-500"><span class="text-2xl font-semibold text-yellow-500 block">How to Cook</span>
+        ${food.strInstructions}</p>
+    </div>
+    
     `
     
     
